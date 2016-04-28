@@ -1,0 +1,102 @@
+﻿@model IEnumerable<InventoryTracking.Models.ItemsModel>
+
+@{
+    ViewBag.Title = "Stock Page";
+}
+
+<h2>Stock Page</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Search", "Items"))
+{
+    @Html.Editor("name")
+    <input type="submit" value="Search" />
+}
+
+    
+  
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.itemQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.itemPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sku)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+     var map;
+     function initMap() {
+         var myLatLng = { lat: 65.6359, lng: 23.8789 };
+
+         var map = new google.maps.Map(document.getElementById('map'), {
+             zoom: 4,
+             center: myLatLng
+         });
+
+         var marker = new google.maps.Marker({
+             position: myLatLng,
+             map: map,
+             title: 'Hello World!'
+         });
+     }
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnnpdf6b1549T0SHRPKJzMGdxThCSkJQE&callback=initMap"
+            async defer></script>
+
+</body>
