@@ -17,8 +17,6 @@
 }
 
     
-  
-
 <table class="table">
     <tr>
         <th>
@@ -59,44 +57,4 @@
 }
 
 </table>
-<head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
 
-        #map {
-            height: 200px;
-        }
-    </style>
-</head>
-<body>
-    <div id="map"></div>
-    <script>
-     var map;
-     function initMap() {
-         var myLatLng = { lat: 65.6359, lng: 23.8789 };
-
-         var map = new google.maps.Map(document.getElementById('map'), {
-             zoom: 4,
-             center: myLatLng
-         });
-
-         var marker = new google.maps.Marker({
-             position: myLatLng,
-             map: map,
-             title: 'Hello World!'
-         });
-     }
-
-    </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnnpdf6b1549T0SHRPKJzMGdxThCSkJQE&callback=initMap"
-            async defer></script>
-
-</body>

@@ -1,41 +1,41 @@
-﻿using System;
+﻿using InventoryTracking.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using InventoryTracking.Models;
 
 namespace InventoryTracking.Controllers
 {
-    public class ItemsController : Controller
+    public class StoreController : Controller
     {
-        // GET: Items
         ApplicationDbContext db = new ApplicationDbContext();
+        // GET: Store
         public ActionResult Index()
         {
-            return View(db.items.ToList());
+            return View(db.store1.ToList());
         }
 
-        // GET: Items/Details/5
+        // GET: Store/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Items/Create
+        // GET: Store/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Items/Create
+        // POST: Store/Create
         [HttpPost]
-        public ActionResult Create(ItemsModel item)
+        public ActionResult Create(ItemsModel items)
         {
             try
             {
                 // TODO: Add insert logic here
-                db.items.Add(item);
+                db.items.Add(items);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -45,13 +45,13 @@ namespace InventoryTracking.Controllers
             }
         }
 
-        // GET: Items/Edit/5
+        // GET: Store/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Items/Edit/5
+        // POST: Store/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -67,55 +67,13 @@ namespace InventoryTracking.Controllers
             }
         }
 
-        //public ActionResult Search(int skuNumber)
-        //{
-
-        //    return View(db.items.ToList());
-        //}
-
-        // POST: Items/Edit/5
-        [HttpPost]
-        public ActionResult Search(string name, ItemsModel item)
-        {
-            try
-            {
-                //var returnedItem = (from i in db.items
-                //                    where i.name.Equals(item.name)
-                //                    select i).ToList();
-                //return View("Index", returnedItem);
-
-                List<ItemsModel> listOfItems = new List<ItemsModel>();
-
-                foreach (ItemsModel items in db.items)
-                {
-                    if (items.name.Equals(name))
-                    {
-                        listOfItems.Add(items); 
-                    }
-                }
-                return View(listOfItems);
-
-                // TODO: Add update logic here
-
-                return RedirectToAction("Search");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-
-
-
-
-        // GET: Items/Delete/5
+        // GET: Store/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Items/Delete/5
+        // POST: Store/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

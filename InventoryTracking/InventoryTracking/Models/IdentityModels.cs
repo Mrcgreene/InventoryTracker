@@ -22,6 +22,8 @@ namespace InventoryTracking.Models
     {
 
         public DbSet<ItemsModel> items { get; set; }
+        public DbSet<StoreModel> store1 { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
