@@ -16,6 +16,8 @@ namespace InventoryTracking.Models
         public double itemPrice { get; set; }
         public int storeID { get; set; }
 
+        public int warningLevel = 7;
+        public int refillLevel = 4;
 
         //public ItemsModel()
         //{

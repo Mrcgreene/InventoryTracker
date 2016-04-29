@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<InventoryTracking.Models.ItemsModel>
 
 @{
-    ViewBag.Title = "Stock Page";
+    ViewBag.Title = "Mr Robot Inventory Catalog";
 }
 
-<h2>Stock Page</h2>
+<h2>Mr Robot Inventory Catalog</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -37,6 +37,8 @@
         <th></th>
     </tr>
 
+
+
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -46,7 +48,24 @@
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.itemQuantity)
+            @*@Html.DisplayFor(modelItem => item.itemQuantity)*@
+                            @if (item.itemQuantity <= item.refillLevel)
+                {
+                    <p style="color: red">@item.itemQuantity</p>
+
+                }
+                else if (item.itemQuantity <= item.warningLevel)
+                {
+                    <p style="color: orange">@item.itemQuantity</p>
+
+                }
+                else if (item.itemQuantity >= item.warningLevel)
+                {
+                    <p style="color: lawngreen">@item.itemQuantity</p>
+                }
+
+              
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.itemPrice)
