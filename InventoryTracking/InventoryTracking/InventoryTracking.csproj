@@ -223,6 +223,14 @@
     <Compile Include="Migrations\201604282137324_yet another storeModel.Designer.cs">
       <DependentUpon>201604282137324_yet another storeModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604291439483_added storeID to table.cs" />
+    <Compile Include="Migrations\201604291439483_added storeID to table.Designer.cs">
+      <DependentUpon>201604291439483_added storeID to table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604291442367_storeID update2.cs" />
+    <Compile Include="Migrations\201604291442367_storeID update2.Designer.cs">
+      <DependentUpon>201604291442367_storeID update2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -325,6 +333,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604282137324_yet another storeModel.resx">
       <DependentUpon>201604282137324_yet another storeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291439483_added storeID to table.resx">
+      <DependentUpon>201604291439483_added storeID to table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291442367_storeID update2.resx">
+      <DependentUpon>201604291442367_storeID update2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

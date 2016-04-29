@@ -94,6 +94,7 @@ namespace InventoryTracking.Controllers
                     }
                 }
                 return View(listOfItems);
+                
 
                 // TODO: Add update logic here
 

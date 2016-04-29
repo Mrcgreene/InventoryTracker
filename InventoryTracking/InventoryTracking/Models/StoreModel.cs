@@ -13,7 +13,17 @@ namespace InventoryTracking.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public int StoreID { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+
+        public StoreModel(string Name, string Address, string Phone, double Latitude, double Longitude)
+        {
+            this.Name = Name;
+            this.Address = Address;
+            this.Phone = Phone;
+            this.Latitude = Latitude;
+            this.Longitude = Longitude;
+        }
     }
 }
