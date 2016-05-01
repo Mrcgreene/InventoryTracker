@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryTracking.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,8 @@ namespace InventoryTracking.Controllers
     {
         public ActionResult Index()
         {
+            //ApplicationDbContext db = new ApplicationDbContext();
+            
             return View();
         }
 

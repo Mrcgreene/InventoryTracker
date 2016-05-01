@@ -13,6 +13,7 @@ namespace InventoryTracking.Controllers
         ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
+
             return View(db.items.ToList());
         }
 

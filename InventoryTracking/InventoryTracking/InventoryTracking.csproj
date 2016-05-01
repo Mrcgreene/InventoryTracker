@@ -199,6 +199,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -308,6 +309,12 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Standard.cshtml" />
     <Content Include="Views\Items\Search.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Manager\Create.cshtml" />
+    <Content Include="Views\Manager\Search.cshtml" />
+    <Content Include="Views\Manager\Delete.cshtml" />
+    <Content Include="Views\Manager\Details.cshtml" />
+    <Content Include="Views\Manager\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
