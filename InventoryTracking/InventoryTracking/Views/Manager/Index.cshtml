@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Mr Robot Inventory Catalog";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+
 }
 
 <h2>Mr Robot Inventory Catalog</h2>
@@ -64,8 +66,6 @@
                     <p style="color: lawngreen">@item.itemQuantity</p>
                 }
 
-              
-            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.itemPrice)

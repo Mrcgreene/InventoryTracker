@@ -99,7 +99,7 @@ namespace InventoryTracking.Controllers
 
                 // TODO: Add update logic here
 
-                return RedirectToAction("Search");
+                //return RedirectToAction("Search");
             }
             catch
             {

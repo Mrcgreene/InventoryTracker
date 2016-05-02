@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using InventoryTracking.Models;
+using System.Net.Mail;
 
 namespace InventoryTracking.Controllers
 {
@@ -63,7 +64,7 @@ namespace InventoryTracking.Controllers
         }
 
         // GET: Manager/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, ItemsModel items)
         {
             if (id == null)
             {
@@ -88,6 +89,34 @@ namespace InventoryTracking.Controllers
             {
                 db.Entry(itemsModel).State = EntityState.Modified;
                 db.SaveChanges();
+
+                if (itemsModel.itemQuantity <= itemsModel.refillLevel)
+                {
+                    var fromAddress = new MailAddress("marx414@gmail.com", "From Mr Robot");
+                    var toAddress = new MailAddress("marx414@gmail.com", "Store Manager");
+                    const string fromPassword = "chavez.1";
+                    const string subject = "Low Inventory, Please place order immediately";
+                    const string body = "Please check your store's inventory, item(s) have reached refill level, place order.";
+
+                    var smtp = new SmtpClient
+                    {
+                        Host = "smtp.gmail.com",
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                    };
+                    using (var message = new MailMessage(fromAddress, toAddress)
+                    {
+                        Subject = subject,
+                        Body = body
+                    })
+                    {
+                        smtp.Send(message);
+                    }
+                }
+
                 return RedirectToAction("Index");
             }
             return View(itemsModel);

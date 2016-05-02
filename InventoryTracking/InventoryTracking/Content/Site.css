@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background:url('https://d13yacurqjgara.cloudfront.net/users/31818/screenshots/2273545/dribbb.gif') ;
+    background-position: 45% 5%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +24,17 @@ select,
 textarea {
     max-width: 280px;
 }
+footer{
+   background-color: #fff;
+   color: #000;
+   padding: 8px 5px;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+}
+
+.navbar{background-color:red; 
+      
+}
+
+table { background-color : white; }
